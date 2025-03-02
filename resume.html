@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madhushree Balusamy - Resume</title>
+    <style>
+        :root {
+            --bg-color: #f5f5f5;
+            --text-color: #333;
+            --accent-color: #9c27b0;
+            --card-bg: #fff;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --header-bg: #9c27b0;
+            --header-text: #fff;
+        }
+
+        .dark-mode {
+            --bg-color: #121212;
+            --text-color: #f5f5f5;
+            --accent-color: #ce93d8;
+            --card-bg: #1e1e1e;
+            --shadow-color: rgba(0, 0, 0, 0.5);
+            --header-bg: #1a1a1a;
+            --header-text: #ce93d8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding-bottom: 30px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: var(--header-bg);
+            color: var(--header-text);
+            padding: 20px 0;
+            position: relative;
+        }
+
+        .timer {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .contact-info a {
+            color: var(--header-text);
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            color: var(--accent-color);
+            margin: 25px 0 15px 0;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 5px;
+        }
+
+        .section {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px var(--shadow-color);
+        }
+
+        .experience-item, .project-item, .education-item {
+            margin-bottom: 20px;
+        }
+
+        .experience-item:last-child, .project-item:last-child, .education-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        .item-title {
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        .item-date {
+            font-style: italic;
+        }
+
+        .item-subtitle {
+            font-weight: bold;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .skill-tag {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px var(--shadow-color);
+            z-index: 100;
+            font-weight: bold;
+        }
+
+        .theme-toggle:hover {
+            opacity: 0.9;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        .languages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .language-item {
+            margin-bottom: 10px;
+        }
+
+        .language-name {
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-bottom: 3px;
+        }
+
+        .language-skills {
+            display: flex;
+            gap: 10px;
+        }
+
+        .language-skill {
+            font-size: 14px;
+        }
+
+        .language-events {
+            font-size: 13px;
+            color: var(--accent-color);
+            margin-top: 2px;
+        }
+
+        @media (max-width: 600px) {
+            .item-header {
+                flex-direction: column;
+            }
+            
+            .timer {
+                position: static;
+                text-align: center;
+                margin-top: 10px;
+            }
+            
+            .languages-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="timer" id="timer">00:00:00</div>
+            <h1>MADHUSHREE BALUSAMY</h1>
+            <div class="contact-info">
+                <span>📧 <a href="mailto:madhushreebalu2004@gmail.com">madhushreebalu2004@gmail.com</a></span>
+                <span>📱 +91 9080434826</span>
+                <span>🔗 <a href="https://linkedin.com/in/Madhushree-balusamy" target="_blank">LinkedIn</a></span>
+                <span>📍 Namakkal, Tamilnadu, India</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="section">
+            <h2>Objective</h2>
+            <p>A passionate and dedicated front-end developer with a keen eye for designing visually stunning websites. I enjoy turning ideas into interactive and user-friendly web experiences.</p>
+        </section>
+
+        <section class="section">
+            <h2>Education</h2>
+            <div class="education-item">
+                <div class="item-header">
+                    <div class="item-title">Computer Science Engineering</div>
+                    <div class="item-date">2022-2026</div>
+                </div>
+                <div class="item-subtitle">Sona College of Technology</div>
+                <p>8.275 CGPA</p>
+            </div>
+            <div class="education-item">
+                <div class="item-header">
+                    <div class="item-title">12th Standard</div>
+                    <div class="item-date">2022</div>
+                </div>
+                <div class="item-subtitle">Chanakya Hi-Tech Matric Hr Sec School</div>
+                <p>90%</p>
+            </div>
+            <div class="education-item">
+                <div class="item-header">
+                    <div class="item-title">10th Standard</div>
+                    <div class="item-date">2016-2022</div>
+                </div>
+                <div class="item-subtitle">Chanakya Hi-Tech Matric Hr Sec School</div>
+                <p>92.4%</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Experience</h2>
+            <div class="experience-item">
+                <div class="item-header">
+                    <div class="item-title">Web Developer Intern</div>
+                    <div class="item-date">1 August - 31 August</div>
+                </div>
+                <div class="item-subtitle">Prodigy InfoTech</div>
+            </div>
+            <div class="experience-item">
+                <div class="item-header">
+                    <div class="item-title">Web Developer Intern</div>
+                    <div class="item-date">27 July - 27 September</div>
+                </div>
+                <div class="item-subtitle">Devskillhub</div>
+            </div>
+            <p>I have gained wonderful knowledge and great experience in working as a Web developer Intern at Prodigy Infotech and Devskills.</p>
+        </section>
+
+        <section class="section">
+            <h2>Projects</h2>
+            <div class="project-item">
+                <div class="item-title">Library Management System</div>
+                <p>This project focuses on developing a Library Management System that efficiently manages the library's operations with a strong emphasis on seamless database connectivity.</p>
+            </div>
+            <div class="project-item">
+                <div class="item-title">KUREKID - Epics Project</div>
+                <p>An approach to support the autistic kids with their emotional capabilities. Visited autistic center to observe and understand autistic students.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Skills</h2>
+            <div class="skills-container">
+                <span class="skill-tag">HTML</span>
+                <span class="skill-tag">CSS</span>
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">C</span>
+                <span class="skill-tag">Figma</span>
+                <span class="skill-tag">Problem solving</span>
+                <span class="skill-tag">Coding</span>
+                <span class="skill-tag">Web designing</span>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Languages</h2>
+            <div class="languages-grid">
+                <div class="language-item">
+                    <div class="language-name">English</div>
+                    <div class="language-skills">
+                        <span class="language-skill">Read</span>
+                        <span class="language-skill">Write</span>
+                        <span class="language-skill">Speak</span>
+                    </div>
+                    <div class="language-events">Spark's 2022, 2023</div>
+                </div>
+                <div class="language-item">
+                    <div class="language-name">Tamil</div>
+                    <div class="language-skills">
+                        <span class="language-skill">Read</span>
+                        <span class="language-skill">Write</span>
+                        <span class="language-skill">Speak</span>
+                    </div>
+                    <div class="language-events">Cryptera-CIT 2024</div>
+                </div>
+                <div class="language-item">
+                    <div class="language-name">Hindi</div>
+                    <div class="language-skills">
+                        <span class="language-skill">Read</span>
+                        <span class="language-skill">Write</span>
+                    </div>
+                    <div class="language-events">Threads 2023</div>
+                </div>
+                <div class="language-item">
+                    <div class="language-name">Japanese</div>
+                    <div class="language-skills">
+                        <span class="language-skill">Read</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Certifications</h2>
+            <ul>
+                <li>Design Thinking</li>
+                <li>Design & Implementation of Human-Computer Interface - Silver Medal</li>
+                <li>NPTEL Programming In Java</li>
+                <li>UI Path 2024</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Achievements</h2>
+            <ul>
+                <li>Sona Speaker's Forum - 3rd prize</li>
+                <li>Paper presentation - winner (Quantum Cryptography at 'THREADS')</li>
+                <li>SIH 2024</li>
+                <li>Appathon 2023</li>
+                <li>Aptithon 2023</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Areas of Interest</h2>
+            <div class="skills-container">
+                <span class="skill-tag">UI/UX Design</span>
+                <span class="skill-tag">Web Development</span>
+                <span class="skill-tag">Problem Solving</span>
+            </div>
+        </section>
+    </div>
+
+    <button class="theme-toggle" id="theme-toggle">Toggle Dark Mode</button>
+
+    <script>
+        // Welcome alert
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                alert('Welcome to Madhushree Balusamy\'s Resume! Click the button in the bottom right to toggle dark mode.');
+            }, 500);
+        });
+
+        // Timer functionality
+        function updateTimer() {
+            const timerElement = document.getElementById('timer');
+            let seconds = 0;
+            setInterval(() => {
+                seconds++;
+                const hours = Math.floor(seconds / 3600).toString().padStart(2, '0');
+                const minutes = Math.floor((seconds % 3600) / 60).toString().padStart(2, '0');
+                const secs = (seconds % 60).toString().padStart(2, '0');
+                timerElement.textContent = `${hours}:${minutes}:${secs}`;
+            }, 1000);
+        }
+        updateTimer();
+
+        // Dark mode toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+    </script>
+</body>
+</html>
